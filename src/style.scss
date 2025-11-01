@@ -1,4 +1,4 @@
-#uiMessages div {
+#FD-message div {
     position: absolute;
     max-width: 70%;
     top: -10rem;
@@ -11,16 +11,16 @@
     transform: translateX(-50%);
     z-index: 99;
     cursor: pointer;
+
+    &.uiMsg {
+        backdrop-filter: blur(5px);
+        background-color: rgba(var(--accentRGB), .2);
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 10px 5px rgba(var(--accentRGB), .5);
+    }
 }
 
-.uiMsgClass {
-    backdrop-filter: blur(5px);
-    background-color: rgba(var(--accentRGB), .2);
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 10px 5px rgba(var(--accentRGB), .5);
-}
-
-#prompt {
+#FD-prompt {
     &>div {
         position: absolute;
         min-width: 200px;

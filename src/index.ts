@@ -1,26 +1,38 @@
 import { delay } from "@wxn0brp/flanker-ui/utils";
 
-export interface uiMessage__opts {
+export interface FD_uiMessage__opts {
     displayTime?: number;
     className?: string;
     backgroundColor?: string;
     onClick?: () => void;
 }
 
-export interface uiMsg__opts {
+export interface FD_uiMsg__opts {
     extraTime?: number;
     onClick?: () => void;
 }
 
-export const uiMessagesDiv = qs("#uiMessages");
-export const promptDiv = qs("#prompt");
+export interface FD_selectPromptCategory<T> {
+    name: string;
+    options: T[];
+    value?: T;
+}
 
-export let langFunc = (text: string, ...data: any[]) => text.replace(/%s/g, () => data.shift());
+export const uiMessagesDiv = qs("#FD-message");
+export const promptDiv = qs("#FD-prompt");
+
+export let langFunc = (text: string, ...data: any[]) => {
+    return text.replace(/\\\$|(?<!\\)\$/g, (match) => {
+        if (match === "\\$") return "$";
+        return data.shift()?.toString() || "$";
+    });
+}
+
 export function setLangFunc(func: typeof langFunc) {
     langFunc = func;
 }
 
-export async function uiMessage(message: string, opts: uiMessage__opts = {}) {
+export async function uiMessage(message: string, opts: FD_uiMessage__opts = {}) {
     opts = {
         displayTime: 6000,
         ...opts,
@@ -69,7 +81,7 @@ export async function uiMessage(message: string, opts: uiMessage__opts = {}) {
     await end();
 }
 
-export async function uiMsg(data: string, opts: uiMsg__opts = {}) {
+export async function uiMsg(data: string, opts: FD_uiMsg__opts = {}) {
     opts = {
         extraTime: 0,
         ...opts
@@ -78,9 +90,9 @@ export async function uiMsg(data: string, opts: uiMsg__opts = {}) {
     const speed = 1 / 3; //1s = 3 words
     const time = data.split(" ").length * speed + 6 + opts.extraTime;
 
-    const msgOpts: uiMessage__opts = {
+    const msgOpts: FD_uiMessage__opts = {
         displayTime: time * 1000,
-        className: "uiMsgClass",
+        className: "uiMsg",
     }
     if (opts.onClick) msgOpts.onClick = opts.onClick;
 
@@ -178,7 +190,7 @@ export async function selectPrompt<T>(
     text: string,
     options: string[],
     optionsValues = [],
-    categories: { name: string; options: T[], value?: T }[] = []
+    categories: FD_selectPromptCategory<T>[] = []
 ): Promise<string | T> {
     return new Promise((resolve) => {
         function end() {
@@ -271,4 +283,14 @@ export async function promptTime(
         promptDiv.appendChild(div);
         div.fadeIn();
     });
+}
+
+(window as any).FD = {
+    uiMessage,
+    uiMsg,
+    uiMsgT,
+    confirm,
+    prompt,
+    selectPrompt,
+    promptTime,
 }
