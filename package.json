@@ -19,6 +19,7 @@
 		"@types/node": "*",
 		"@wxn0brp/flanker-ui": "^0.4.3",
 		"sass": "^1.93.3",
+		"tsc-alias": "*",
 		"typescript": "*"
 	},
 	"peerDependencies": {
