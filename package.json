@@ -1,0 +1,42 @@
+{
+	"name": "@wxn0brp/flanker-dialog",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wxn0brP/FlankerDialog.git"
+	},
+	"homepage": "https://github.com/wxn0brP/FlankerDialog",
+	"author": "wxn0brP",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "tsc && tsc-alias && sass src:dist"
+	},
+	"devDependencies": {
+		"@types/node": "*",
+		"@wxn0brp/flanker-ui": "^0.4.3",
+		"sass": "^1.93.3",
+		"typescript": "*"
+	},
+	"peerDependencies": {
+		"@wxn0brp/flanker-ui": ">=0.4.3"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./*": {
+			"types": "./dist/*.d.ts",
+			"import": "./dist/*.js",
+			"default": "./dist/*.js"
+		}
+	}
+}
