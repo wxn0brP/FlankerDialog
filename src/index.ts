@@ -1,4 +1,5 @@
 import { delay } from "@wxn0brp/flanker-ui/utils";
+import "@wxn0brp/flanker-ui/html";
 
 export interface FD_uiMessage__opts {
     displayTime?: number;
@@ -49,7 +50,7 @@ export async function uiMessage(message: string, opts: FD_uiMessage__opts = {}) 
 
     function calculateTopPosition() {
         let top = 0;
-        for (const child of promptDiv.children)
+        for (const child of uiMessagesDiv.children)
             top += (child as HTMLDivElement).offsetHeight + padding;
         return top;
     }
@@ -61,7 +62,7 @@ export async function uiMessage(message: string, opts: FD_uiMessage__opts = {}) 
         div.style.top = `-${div.offsetHeight + 20}px`;
 
         await delay(700);
-        for (const child of promptDiv.children) {
+        for (const child of uiMessagesDiv.children) {
             const childE = child as HTMLDivElement;
             const currentTop = parseInt(childE.style.top.replace("px", ""));
             childE.style.top = `${currentTop - padding - div.offsetHeight}px`;
@@ -72,7 +73,7 @@ export async function uiMessage(message: string, opts: FD_uiMessage__opts = {}) 
     div.addEventListener("click", end);
     if (opts.onClick) div.addEventListener("click", opts.onClick);
 
-    promptDiv.appendChild(div);
+    uiMessagesDiv.appendChild(div);
     await delay(100);
     div.style.top = `${10 + topPosition}px`;
 
