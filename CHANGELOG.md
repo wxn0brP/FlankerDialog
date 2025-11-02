@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/wxn0brP/FlankerDialog/compare/v0.0.2...v0.0.3) (2025-11-02)
+
+
+### Bug Fixes
+
+* bugs ([d035f25](https://github.com/wxn0brP/FlankerDialog/commit/d035f250a83b90c15adce916803ded5cc9aad293))
+
 ### 0.0.2 (2025-11-01)
 
 
