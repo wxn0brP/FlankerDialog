@@ -13,8 +13,7 @@
     cursor: pointer;
 
     &.uiMsg {
-        backdrop-filter: blur(5px);
-        background-color: rgba(var(--accentRGB), .2);
+        background-color: var(--back);
         border: 3px solid var(--accent);
         box-shadow: 0 0 10px 5px rgba(var(--accentRGB), .5);
     }
