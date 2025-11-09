@@ -181,6 +181,16 @@ export async function confirm(text: string, yesText: string = "OK", noText: stri
         accept.addEventListener("click", end(true));
         flex.appendChild(accept);
 
+        function btn(e: KeyboardEvent) {
+            if (e.key == "Enter") end(true)();
+            else if (e.key == "Escape") end(false)();
+            document.removeEventListener("keydown", btn);
+        }
+        document.addEventListener("keydown", btn);
+        setTimeout(() => {
+            accept.focus();
+        }, 100);
+
         div.appendChild(flex);
         promptDiv.appendChild(div);
         div.fadeIn();
