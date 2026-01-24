@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "*",
-		"@wxn0brp/flanker-ui": "^0.4.3",
+		"@wxn0brp/flanker-ui": "^0.5.0",
 		"sass": "^1.93.3",
 		"tsc-alias": "*",
 		"typescript": "*"
