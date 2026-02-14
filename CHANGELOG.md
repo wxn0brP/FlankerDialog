@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/wxn0brP/FlankerDialog/compare/v0.0.5...v0.0.6) (2026-02-14)
+
+
+### Features
+
+* bump deps ([28661f0](https://github.com/wxn0brP/FlankerDialog/commit/28661f03aaa05c4b156cc59499f81e9c2ad21687))
+
 ### [0.0.5](https://github.com/wxn0brP/FlankerDialog/compare/v0.0.4...v0.0.5) (2025-11-09)
 
 
