@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/wxn0brP/FlankerDialog/compare/v0.0.6...v0.1.0) (2026-02-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* api
+
+* api ([80e6421](https://github.com/wxn0brP/FlankerDialog/commit/80e6421f51c941ef91b33ea7783e3dccf67f2461))
+
 ### [0.0.6](https://github.com/wxn0brP/FlankerDialog/compare/v0.0.5...v0.0.6) (2026-02-14)
 
 
