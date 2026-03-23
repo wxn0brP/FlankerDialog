@@ -20,7 +20,7 @@
         "@wxn0brp/flanker-ui": "^0.5.1",
         "sass": "^1.97.3",
         "tsc-alias": "*",
-        "typescript": "*"
+        "typescript": "^5"
     },
     "peerDependencies": {
         "@wxn0brp/flanker-ui": ">=0.5.1"
