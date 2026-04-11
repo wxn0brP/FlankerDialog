@@ -1,10 +1,6 @@
 {
-	cmd: "yarn build",
+	cmd: "bun run build",
 	watch: [
 		"src"
-	],
-	restart_cmd: "clear",
-	events: {
-		rs: "clear"
-	}
+	]
 }
