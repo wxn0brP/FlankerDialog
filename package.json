@@ -16,7 +16,7 @@
         "build": "tsc && tsc-alias && sass src:dist"
     },
     "devDependencies": {
-        "@types/node": "*",
+        "@wxn0brp/biome": "*",
         "@wxn0brp/flanker-ui": "^0.5.1",
         "sass": "^1.97.3",
         "tsc-alias": "^1",
