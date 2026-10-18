@@ -1,5 +1,5 @@
 #FD-message div {
-    position: absolute;
+    position: fixed;
     width: fit-content;
     max-width: 70%;
     margin-inline: auto;
@@ -33,7 +33,7 @@
     text-align: center;
 
     &>div {
-        position: absolute;
+        position: fixed;
         min-width: 200px;
         max-width: 70%;
         top: 50%;
